@@ -70,4 +70,70 @@ SELECT : Used only for querying data.
 Pro Tip for Beginners
 Always use COMMIT and ROLLBACK carefully to avoid unintended changes, especially in critical databases. Practice using SELECT frequently to understand your data before making changes with DML commands.
 =============================================================  
-Step A: Enter the PostgreSQL Shell
+Step A: Install PostgreSQL on Windows
+Step B: Search for PGAdmin from search bar. Then open 
+Click on Server > PostgreSQL> Databases> postgres
+============================================================= 
+Create Database##################
+CREATE DATABASE 
+office;
+
+Create Table##################
+CREATE TABLE emp(
+	emp_name VARCHAR(100) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	addr VARCHAR(80) NOT NULL,
+	dsg VARCHAR(30) NOT NULL,
+	join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+\l        -- list databases
+\c ltech  -- connect database
+
+SELECT * FROM emp;
+
+INSERT INTO emp(emp_name, lname, addr, dsg)
+VALUES 
+('hari','murya','kerala','hr'),
+('jhon','gulati','pune','it'),
+('manoj','saha','chennai','hr_head'),
+('sneha','kurli','mumbai','it_manager'),
+('preeti','kumari','jassore','sales'),
+('jumur','kumari','kolkata','marketing'),
+('priti','jhindal','pune','admin'),
+('koli','sarah','delhi','software');
+
+SELECT * FROM emp;
+
+DELETE FROM emp
+WHERE emp_name='ravi';
+
+ALTER TABLE emp
+DROP COLUMN addr;
+SELECT * FROM emp;
+
+ALTER TABLE emp
+RENAME COLUMN emp_name TO fname;
+SELECT * FROM emp;
+
+UPDATE emp
+SET fname='harish'
+WHERE lname='murya';
+SELECT * FROM emp;
+
+SELECT * FROM emp ORDER BY join_date DESC;
+SELECT * FROM emp ORDER BY join_date ASC;
+
+ALTER TABLE emp
+ADD COLUMN age INT;
+SELECT * FROM emp;
+
+ALTER TABLE emp
+ADD COLUMN SALARY int;
+SELECT * FROM emp;
+
+ALTER TABLE emp
+ALTER COLUMN SALARY TYPE NUMERIC(10,2);
+SELECT * FROM emp;
+
+
