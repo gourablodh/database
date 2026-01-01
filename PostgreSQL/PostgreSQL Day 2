@@ -1,0 +1,31 @@
+Rename Column name
+
+ALTER TABLE EMP
+RENAME COLUMN emp_name TO ename;
+SELECT * FROM emp;
+
+TO CHANGE DATA TYPES: THE AGE COLUMN FROM INT TO SMALL INT
+ALTER TABLE ITU
+ALTER COLUMN AGE TYPE SMALLINT;
+SELECT * FROM ITU;
+
+Modifies an existing column and Adds a NOT NULL constraint
+ALTER TABLE users
+ALTER COLUMN city SET NOT NULL;
+
+Drop Constraint
+Query system catalog for conname:
+SELECT conname, contype
+FROM table
+WHERE conrelid = 'emp'::regclass;
+
+ALTER TABLE emp
+DROP CONSTRAINT emp_emp_name_not_null;
+
+Adds a NEW constraint to the table
+ALTER TABLE emp
+ADD CONSTRAINT emp_fname_unique UNIQUE(fname);
+
+ALTER TABLE NAME
+ALTER TABLE emp
+RENAME TO EMPTABLE;
