@@ -1,0 +1,73 @@
+What is SQL?
+SQL (Structured Query Language) is a programming language used to interact with databases. It is the standard language for querying, inserting, updating, and managing data stored in relational databases.
+
+Why we use SQL?
+1. Simplifies working with large datasets.
+2. Enables easy and efficient data management.
+3. SQL is universal and works with most database systems (like PostgreSQL, MySQL, SQL Server).
+
+DATA
+Anything & Everything can be considered as data.
+Any information or fact can be considered as data.
+For any Financial Institute, details related to its employees, customers, their Services or even their address can be data.
+Data can be in any form such as a text message or an image or a video or a document or single character itself.
+
+What is Database?
+A database is collection of Data that can be easily access (Digitally)
+A software to manage database is called DBMS (Database Management Software)
+
+Now we are learning Postgre SQL
+---------------------------------
+Download PostgreSQL from: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+After downloads install on the PC.
+Search for pgAdmin 4 and click on Server and give password
+This is a IDE tool where can run codes
+
+Types of SQL Commands:
+-----------------------
+DDL (Data Definition Language)
+Used to define or change the structure of database objects (tables, schemas, indexes).
+| Command    | Purpose                                   |
+| ---------- | ----------------------------------------- |
+| `CREATE`   | Create database objects                   |
+| `ALTER`    | Modify existing objects                   |
+| `DROP`     | Delete objects                            |
+| `TRUNCATE` | Remove all table data (structure remains) |
+| `RENAME`   | Rename an object                          |
+
+
+DML (Data Manipulation Language)
+Used to manage data inside tables.
+| Command  | Purpose                 |
+| -------- | ----------------------- |
+| `INSERT` | Add new records         |
+| `UPDATE` | Modify existing records |
+| `DELETE` | Remove records          |
+| `SELECT` | Retrieve data           |
+
+DCL (Data Control Language)
+Used to control access and permissions.
+| Command  | Purpose            |
+| -------- | ------------------ |
+| `GRANT`  | Give permissions   |
+| `REVOKE` | Remove permissions |
+
+TCL (Transaction Control Language)
+Used to manage transactions (especially important in production systems).
+| Command           | Purpose                       |
+| ----------------- | ----------------------------- |
+| `COMMIT`          | Save transaction              |
+| `ROLLBACK`        | Undo changes                  |
+| `SAVEPOINT`       | Set rollback point            |
+| `SET TRANSACTION` | Define transaction properties |
+| `BEGIN` 	    | Start transaction             |
+
+DQL (Data Query Language)
+Sometimes treated separately, mainly includes:
+SELECT : Used only for querying data.
+
+=============================================================
+Pro Tip for Beginners
+Always use COMMIT and ROLLBACK carefully to avoid unintended changes, especially in critical databases. Practice using SELECT frequently to understand your data before making changes with DML commands.
+=============================================================  
+Step A: Enter the PostgreSQL Shell
