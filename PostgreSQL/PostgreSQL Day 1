@@ -156,7 +156,7 @@ ALTER COLUMN city SET NOT NULL;
 ######Drop Constraint######
 Query system catalog for conname:
 SELECT conname, contype
-FROM table
+FROM pg_constraint
 WHERE conrelid = 'emp'::regclass;
 
 ALTER TABLE emp
