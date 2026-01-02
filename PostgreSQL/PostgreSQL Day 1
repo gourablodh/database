@@ -74,11 +74,11 @@ Step A: Install PostgreSQL on Windows
 Step B: Search for PGAdmin from search bar. Then open 
 Click on Server > PostgreSQL> Databases> postgres
 ============================================================= 
-Create Database##################
+######Create Database######
 CREATE DATABASE 
 office;
 
-Create Table##################
+######Create Table######
 CREATE TABLE emp(
 	emp_name VARCHAR(100) NOT NULL,
 	lname VARCHAR(50) NOT NULL,
@@ -90,8 +90,10 @@ CREATE TABLE emp(
 \l        -- list databases
 \c ltech  -- connect database
 
+######Retrieve items from Table######
 SELECT * FROM emp;
 
+######Add new records (rows) to a table######
 INSERT INTO emp(emp_name, lname, addr, dsg)
 VALUES 
 ('hari','murya','kerala','hr'),
@@ -105,25 +107,31 @@ VALUES
 
 SELECT * FROM emp;
 
+######Delete row from table######
 DELETE FROM emp
 WHERE emp_name='ravi';
 
+######Remove Column######
 ALTER TABLE emp
 DROP COLUMN addr;
 SELECT * FROM emp;
 
-ALTER TABLE emp
-RENAME COLUMN emp_name TO fname;
+######Rename Column######
+ALTER TABLE EMP
+RENAME COLUMN emp_name TO ename;
 SELECT * FROM emp;
 
+######Update Items######
 UPDATE emp
 SET fname='harish'
 WHERE lname='murya';
 SELECT * FROM emp;
 
+######Retrive by ascending and decending order######
 SELECT * FROM emp ORDER BY join_date DESC;
 SELECT * FROM emp ORDER BY join_date ASC;
 
+######Add Column######
 ALTER TABLE emp
 ADD COLUMN age INT;
 SELECT * FROM emp;
@@ -132,8 +140,34 @@ ALTER TABLE emp
 ADD COLUMN SALARY int;
 SELECT * FROM emp;
 
+######Change Data Types in Column######
 ALTER TABLE emp
 ALTER COLUMN SALARY TYPE NUMERIC(10,2);
 SELECT * FROM emp;
+
+ALTER TABLE ITU
+ALTER COLUMN AGE TYPE SMALLINT;
+SELECT * FROM ITU;
+
+######Modifies an existing column and set to a NOT NULL constraint######
+ALTER TABLE users
+ALTER COLUMN city SET NOT NULL;
+
+######Drop Constraint######
+Query system catalog for conname:
+SELECT conname, contype
+FROM table
+WHERE conrelid = 'emp'::regclass;
+
+ALTER TABLE emp
+DROP CONSTRAINT emp_emp_name_not_null;
+
+######Adds a NEW constraint to the table######
+ALTER TABLE emp
+ADD CONSTRAINT emp_fname_unique UNIQUE(fname);
+
+######ALTER TABLE NAME######
+ALTER TABLE emp
+RENAME TO EMPTABLE;
 
 
